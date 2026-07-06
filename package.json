@@ -1,0 +1,15 @@
+{
+  "name": "using-llms-effectively",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Slides: how to use LLMs effectively",
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md",
+    "export": "slidev export slides.md"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.16.0",
+    "@slidev/theme-seriph": "^0.25.0"
+  }
+}
