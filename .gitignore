@@ -1,6 +1,8 @@
 node_modules/
+.vscode/
 dist/
 .slidev/
 *.local
 .DS_Store
 slides-export.pdf
+                                              
