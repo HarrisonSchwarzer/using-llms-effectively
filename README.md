@@ -91,6 +91,12 @@ Source material the deck draws on:
   - Chroma, [*Context Rot: How Increasing Input Tokens Impacts LLM
     Performance*](https://research.trychroma.com/context-rot) (2025) — 18
     frontier models degrade with input length, even on trivial tasks.
+  - Liu et al., [*Lost in the Middle: How Language Models Use Long
+    Contexts*](https://arxiv.org/abs/2307.03172) (TACL 2024) — attention is
+    highest at the start and end of the context; the middle degrades. Pocock
+    visualizes this in [*What Is The Context
+    Window?*](https://www.aihero.dev/what-is-the-context-window), whose
+    diagram slide 9 recreates.
 
 ## License
 

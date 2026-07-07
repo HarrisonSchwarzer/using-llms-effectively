@@ -12,7 +12,7 @@ mdc: true
 
 # How to Use LLMs Efficiently
 
-Democratized Stochastic Parrotmaxxing
+Commoditized Stochastic Mimesismaxxing
 
 <div class="pt-12 text-sm opacity-70">
 Harrison Schwarzer
@@ -347,7 +347,61 @@ increasingly unreliable as input length grows", "even under these minimal
 conditions, model performance degrades as input length increases."
 
 Pocock's own context-window article visualizes the related "Lost in the
-Middle" effect (Liu et al., TACL 2024).
+Middle" effect (Liu et al., TACL 2024) — next slide.
+-->
+
+---
+
+# "Lost in the Middle"
+
+<div v-click class="mt-10 mx-auto w-max flex items-center gap-3">
+  <span class="text-xs opacity-50" style="writing-mode: vertical-rl; transform: rotate(180deg)">impact on output →</span>
+  <div>
+    <div class="flex gap-2 items-start pl-5 pb-5" style="border-left: 2px dashed rgba(128,128,128,.4); border-bottom: 2px dashed rgba(128,128,128,.4)">
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 0px; opacity: 1"></div>
+      <div class="w-6 h-6 rounded bg-amber-500" style="margin-top: 32px; opacity: .8"></div>
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 59px; opacity: .63"></div>
+      <div class="w-6 h-6 rounded bg-amber-500" style="margin-top: 81px; opacity: .49"></div>
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 98px; opacity: .39"></div>
+      <div class="w-6 h-6 rounded bg-amber-500" style="margin-top: 110px; opacity: .31"></div>
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 118px; opacity: .26"></div>
+      <div class="w-6 h-6 rounded bg-amber-500" style="margin-top: 120px; opacity: .25"></div>
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 118px; opacity: .26"></div>
+      <div class="w-6 h-6 rounded bg-amber-500" style="margin-top: 110px; opacity: .31"></div>
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 98px; opacity: .39"></div>
+      <div class="w-6 h-6 rounded bg-amber-500" style="margin-top: 81px; opacity: .49"></div>
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 59px; opacity: .63"></div>
+      <div class="w-6 h-6 rounded bg-amber-500" style="margin-top: 32px; opacity: .8"></div>
+      <div class="w-6 h-6 rounded bg-blue-500" style="margin-top: 0px; opacity: 1"></div>
+    </div>
+    <div class="text-xs opacity-50 text-center mt-2">position in conversation →</div>
+  </div>
+</div>
+
+<div v-click class="mt-8 text-center text-2xl">
+The start and the end get read. The <b>middle</b> gets skimmed.<br>
+<span class="text-xs opacity-60">And it's "much more pronounced the larger the context window gets" <sup>[7][8]</sup></span>
+</div>
+
+<!--
+Recreation of the diagram in Pocock's "What Is The Context Window?" article
+(his version draws the messages as rings on the same U-curve). Opacity here
+encodes attention, not re-sent history — every block on this slide *is*
+history.
+
+Article, verbatim: "the messages at the start of the history have quite a big
+impact on the output, and the ones at the end do too, but the stuff in the
+middle the LLM pays a bit less attention to" — "a well-known phenomenon and
+it's much more pronounced the larger the context window gets." His diagram's
+subtitle notes "this mirrors human behavior" — the serial-position effect
+(primacy/recency) from psychology.
+
+The research behind it — Liu et al., "Lost in the Middle: How Language Models
+Use Long Contexts" (arXiv Jul 2023, published TACL 2024): "performance is
+often highest when relevant information occurs at the beginning or end of the
+input context, and significantly degrades when models must access relevant
+information in the middle of long contexts, even for explicitly long-context
+models."
 -->
 
 ---
@@ -404,6 +458,27 @@ and re-sent.
 6. Chroma — *Context Rot: How Increasing Input Tokens Impacts LLM Performance*, 2025<br>
    <https://research.trychroma.com/context-rot><br>
    "Performance grows increasingly unreliable as input length grows" — 18 frontier models.
+
+</div>
+</div>
+
+---
+
+# References (cont.)
+
+<div class="text-xs grid grid-cols-2 gap-x-10">
+<div>
+
+7. Matt Pocock — *What Is The Context Window?*<br>
+   <https://www.aihero.dev/what-is-the-context-window><br>
+   "The stuff in the middle the LLM pays a bit less attention to … much more pronounced the larger the context window gets."
+
+</div>
+<div>
+
+8. Liu et al. — *Lost in the Middle: How Language Models Use Long Contexts*, TACL 2024<br>
+   <https://arxiv.org/abs/2307.03172><br>
+   "Performance … significantly degrades when models must access relevant information in the middle of long contexts."
 
 </div>
 </div>
