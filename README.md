@@ -78,8 +78,19 @@ Source material the deck draws on:
   - [dictionary-of-ai-coding](https://github.com/mattpocock/dictionary-of-ai-coding)
     — his written definitions of the talk's terms, e.g.
     [Smart zone](https://github.com/mattpocock/dictionary-of-ai-coding/blob/main/dictionary/Smart%20zone.md)
+    (mirrored at [aihero.dev/ai-coding-dictionary](https://www.aihero.dev/ai-coding-dictionary/smart-zone),
+    which is what the slides cite)
   - [AI Engineer Workshop 2026](https://www.aihero.dev/ai-engineer-workshop-2026~dwnll)
     — companion course on aihero.dev covering the same material
+- **Long-context degradation data** — independent corroboration for the
+  smart-zone/dumb-zone claims:
+  - Modarressi et al., [*NoLiMa: Long-Context Evaluation Beyond Literal
+    Matching*](https://arxiv.org/abs/2502.05167) (ICML 2025) — 13 LLMs
+    claiming ≥128K contexts; at 32K, 11 drop below 50% of their short-context
+    baselines.
+  - Chroma, [*Context Rot: How Increasing Input Tokens Impacts LLM
+    Performance*](https://research.trychroma.com/context-rot) (2025) — 18
+    frontier models degrade with input length, even on trivial tasks.
 
 ## License
 

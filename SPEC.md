@@ -54,13 +54,20 @@ presented at work.
 - **Memento quote**: on-slide wording is lightly cleaned ("LLMs are kind of
   like the guy from *Memento* — they just continually forget."); the verbatim
   transcript wording lives in the presenter note. Cited to the talk video.
-- **Cite aihero.dev, never github.com, in slides.md** (identity-separation
-  rule in `.local/notes.md` bans all GitHub links there). The aihero.dev
-  dictionary URLs 404 to non-browser fetchers but work in real browsers.
+- **Cite aihero.dev, never github.com, in slides.md** (see `.local/notes.md`
+  for the standing rule). The aihero.dev dictionary URLs 404 to non-browser
+  fetchers (bot-blocked) but work in real browsers — verify with a browser
+  user-agent, don't conclude they're dead.
 - Corroborating data verified: NoLiMa (ICML 2025, arxiv.org/abs/2502.05167 —
   "at 32K, 11 models drop below 50%" of baseline; per-model effective lengths
   2K–8K) and Chroma's *Context Rot* report (18 frontier models). Both on the
-  References slide.
+  References slide. (NoLiMa's repo README says "10 models"; the paper's
+  abstract says 11 — the abstract is canonical.)
+- **Slide 7's visual is a recreation, not a copy.** Pocock's smart/dumb-zone
+  visual exists only in the talk video — no published image on aihero.dev
+  (his context-window article has other diagrams, e.g. "Lost in the Middle"),
+  no published slide deck. Recreated in the deck's own color language; keep
+  it that way (CC BY deck — no third-party image rights to manage).
 
 ## Current slide map
 
@@ -100,5 +107,5 @@ presented at work.
 - Launch the dev server with the `launch-deck` skill — it kills stale
   instances first (a stale server on 3030 serves old slides; a browser tab
   with a dead hot-reload socket renders stale content until hard-refreshed).
-- Slide content beyond slide 5 is **not yet dictated** — wait for Harrison's
-  next piece rather than inventing the roadmap.
+- Slides 1–10 are dictated and committed. Nothing beyond them is dictated —
+  wait for Harrison's next piece rather than inventing the roadmap.
