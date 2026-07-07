@@ -75,6 +75,23 @@ presented at work.
   a deliberate, noted overload of the color language (every block there is
   history). Claim double-sourced: Pocock's article `[7]` + the Liu et al.
   "Lost in the Middle" paper it visualizes (TACL 2024) `[8]`.
+- **Red-flags section (slides 11–13) figures, all verified against the
+  papers:** Laban et al. — the −39% is from the abstract (canonical); the
+  aptitude −16% / unreliability +112% decomposition and "15 LLMs from eight
+  model families" are from the paper body (announcement-thread summaries say
+  −15%; the paper says 16% — use the paper). Zhang et al. — the 87% is GPT-4
+  self-recognition "when asked separately" (abstract's word: "separately");
+  ChatGPT's figure is 67%. Sharma et al. is ICLR 2024 (verified on
+  iclr.cc/OpenReview; the arXiv page doesn't state the venue).
+- **Slide 12 extends rose to mean "wrong content"** (a bad reply, and replies
+  built on it; faded rose = the error re-sent in history) — a deliberate
+  extension of the dumb-zone rose, noted in the presenter note. Slide 13's
+  chat panels are an illustrative recreation of Sharma et al.'s
+  feedback-sycophancy task, not a real transcript (noted in presenter note).
+- **Sycophancy causal claim stays hedged.** The paper says "likely driven in
+  part by" human preference judgments — slide 13's "It's what the training
+  rewards" is the punchy version; the presenter note carries the verbatim
+  hedge. Don't strip the hedge from the note.
 
 ## Current slide map
 
@@ -99,12 +116,23 @@ presented at work.
    vs position in conversation), opacity tracking attention — full at the
    ends, faded in the middle
 10. **Memento quote** `[3]` — big centered quote, no heading
-11. **References** — numbered sources, matching on-slide markers; two-column
+11. **Lost in Conversation** `[9]` — big −39% figure (multi-turn vs
+    single-turn, 15 LLMs, six tasks) + the "wrong turn … do not recover"
+    quote. Opens the red-flags section (models can't recover from their own
+    mistakes).
+12. **Context Poisoning** `[10][11]` — request-row motif from slide 2, with a
+    rose wrong reply that rides along in history and turns every later reply
+    rose; Breunig's definition + the GPT-4 87% self-recognition kicker.
+13. **It's Trained to Agree With You** `[12]` — two chat panels, same
+    argument, user says like/dislike, replies mirror; "Agreement isn't
+    evidence."
+14. **References** — numbered sources, matching on-slide markers; two-column
     grid at text-xs, **max 6 entries per slide** (3 per column — entry 6
     overflowed the single-column layout). More sources are expected as the
     deck grows: continue numbering onto additional "References (cont.)"
     slides rather than shrinking or cramming.
-12. **References (cont.)** — entries 7–8
+15. **References (cont.)** — entries 7–12 (now at the 6-entry cap; the next
+    source starts a third references slide)
 
 ## State / next steps
 
@@ -116,6 +144,12 @@ presented at work.
   README.md's References). The Pocock transition (slides 6–9) is dictated and
   done; the agenda and overall shape still await Harrison's dictation — do
   not draft ahead.
+- July 7 session: Harrison asked for candidate "overuse red flags" beyond
+  cost and the dumb zone, picked three (can't recover from wrong turns /
+  context poisoning / sycophancy), and asked for them as slides after the
+  body, before the citations → slides 11–13. Raw source-verification trail:
+  `.local/red-flags-notes.md`. No transition slide into the section was
+  dictated — flag it as an option when the agenda/shape discussion happens.
 - Launch the dev server with the `launch-deck` skill — it kills stale
   instances first (a stale server on 3030 serves old slides; a browser tab
   with a dead hot-reload socket renders stale content until hard-refreshed).

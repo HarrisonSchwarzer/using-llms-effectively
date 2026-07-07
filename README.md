@@ -97,6 +97,23 @@ Source material the deck draws on:
     visualizes this in [*What Is The Context
     Window?*](https://www.aihero.dev/what-is-the-context-window), whose
     diagram slide 9 recreates.
+- **Multi-turn red flags** — sources for the red-flags section (slides 11–13):
+  - Laban et al., [*LLMs Get Lost in Multi-Turn
+    Conversation*](https://arxiv.org/abs/2505.06120) (2025) — 15 LLMs drop
+    39% on average when a task arrives across turns instead of one prompt;
+    "when LLMs take a wrong turn in a conversation, they get lost and do not
+    recover."
+  - Drew Breunig, [*How Long Contexts
+    Fail*](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html)
+    (2025) — the "context poisoning" taxonomy.
+  - Zhang et al., [*How Language Model Hallucinations Can
+    Snowball*](https://arxiv.org/abs/2305.13534) (2023) — models over-commit
+    to early mistakes; GPT-4 separately recognizes 87% of its own false
+    claims.
+  - Sharma et al., [*Towards Understanding Sycophancy in Language
+    Models*](https://arxiv.org/abs/2310.13548) (ICLR 2024) — five
+    state-of-the-art assistants consistently exhibit sycophancy, likely
+    driven in part by human preference training.
 
 ## License
 
