@@ -246,12 +246,6 @@ class: text-center
 
 # Questions?
 
-<div class="mt-8 opacity-80">
-
-Slides: `github.com/HarrisonSchwarzer/using-llms-effectively`
-
-</div>
-
 <div class="mt-4 text-sm opacity-60">
 © 2026 Harrison Schwarzer · Content CC BY 4.0 · Code MIT
 </div>
