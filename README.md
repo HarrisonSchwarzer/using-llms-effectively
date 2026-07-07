@@ -66,6 +66,21 @@ Pushing to `main` triggers a GitHub Actions workflow
 ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) that builds
 the deck and publishes it to GitHub Pages.
 
+## References
+
+Source material the deck draws on:
+
+- **"Full Walkthrough: Workflow for AI Coding"** — Matt Pocock, AI Engineer
+  conference (Europe), April 24, 2026. A ~96-minute workshop; no published
+  slide deck exists, so the video is the canonical source.
+  - [Talk video](https://www.youtube.com/watch?v=-QFHIoCo-Ko)
+  - [Announcement post](https://x.com/mattpocockuk/status/2053583757743911232)
+  - [dictionary-of-ai-coding](https://github.com/mattpocock/dictionary-of-ai-coding)
+    — his written definitions of the talk's terms, e.g.
+    [Smart zone](https://github.com/mattpocock/dictionary-of-ai-coding/blob/main/dictionary/Smart%20zone.md)
+  - [AI Engineer Workshop 2026](https://www.aihero.dev/ai-engineer-workshop-2026~dwnll)
+    — companion course on aihero.dev covering the same material
+
 ## License
 
 Copyright © 2026 Harrison Schwarzer.
