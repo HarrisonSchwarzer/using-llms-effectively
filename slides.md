@@ -12,7 +12,7 @@ mdc: true
 
 # How to Use LLMs Efficiently
 
-New deck in progress
+Democratized Stochastic Parrotmaxxing
 
 <div class="pt-12 text-sm opacity-70">
 Harrison Schwarzer
