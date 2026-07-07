@@ -427,6 +427,167 @@ and re-sent.
 
 ---
 
+# Lost in Conversation
+
+<div v-click class="mt-16 text-center">
+  <div class="text-8xl font-bold text-rose-500">−39%</div>
+  <div class="mt-4 text-sm opacity-70">average performance when a task arrives in pieces across turns,<br>instead of one fully-specified prompt — 15 top LLMs · six task types <sup>[9]</sup></div>
+</div>
+
+<div v-click class="mt-12 text-2xl text-center italic opacity-90">
+"When LLMs take a wrong turn in a conversation,<br>they get lost and do not recover."
+</div>
+
+<!--
+Laban, Hayashi, Zhou, Neville — "LLMs Get Lost in Multi-Turn Conversation"
+(Microsoft Research + Salesforce Research, arXiv 2505.06120, May 2025).
+15 LLMs from eight model families, 200,000+ simulated conversations, six
+generation tasks. Same tasks, two deliveries: one fully-specified prompt vs
+the same content "sharded" across turns — the multi-turn delivery loses 39%
+on average.
+
+Decomposition (paper body): aptitude drops only 16% ("in a non-significant
+way") — but unreliability "skyrockets with an average increase of 112% (more
+than doubling)". The model isn't much dumber on average; it's wildly less
+consistent.
+
+Mechanism, per the abstract: models "make assumptions in early turns and
+prematurely attempt to generate final solutions, on which they overly rely."
+The quote on the slide is verbatim (italicized in the abstract itself).
+
+Practical takeaway: don't keep arguing with a lost conversation — restart
+fresh with everything you've learned in one fully-specified prompt. Why
+doesn't it recover? Next slide: the wrong turn stays in the context.
+-->
+
+---
+
+# Context Poisoning
+
+<div class="mt-10 flex flex-col gap-3 items-start mx-auto w-max">
+  <div v-click class="flex items-center gap-2">
+    <span class="w-24 text-right text-xs opacity-50 font-mono">request 1</span>
+    <div class="flex gap-1">
+      <div class="w-9 h-5 rounded bg-blue-500"></div>
+    </div>
+    <span class="opacity-40 text-xs">→</span>
+    <div class="w-9 h-5 rounded bg-amber-500"></div>
+  </div>
+  <div v-click class="flex items-center gap-2">
+    <span class="w-24 text-right text-xs opacity-50 font-mono">request 2</span>
+    <div class="flex gap-1">
+      <div class="w-9 h-5 rounded bg-blue-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-amber-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-blue-500"></div>
+    </div>
+    <span class="opacity-40 text-xs">→</span>
+    <div class="w-9 h-5 rounded bg-rose-500"></div>
+  </div>
+  <div v-click class="flex items-center gap-2">
+    <span class="w-24 text-right text-xs opacity-50 font-mono">request 3</span>
+    <div class="flex gap-1">
+      <div class="w-9 h-5 rounded bg-blue-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-amber-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-blue-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-rose-500 opacity-40"></div>
+      <div class="w-9 h-5 rounded bg-blue-500"></div>
+    </div>
+    <span class="opacity-40 text-xs">→</span>
+    <div class="w-9 h-5 rounded bg-rose-500"></div>
+  </div>
+  <div v-click class="flex items-center gap-2">
+    <span class="w-24 text-right text-xs opacity-50 font-mono">request 4</span>
+    <div class="flex gap-1">
+      <div class="w-9 h-5 rounded bg-blue-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-amber-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-blue-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-rose-500 opacity-40"></div>
+      <div class="w-9 h-5 rounded bg-blue-500 opacity-25"></div>
+      <div class="w-9 h-5 rounded bg-rose-500 opacity-40"></div>
+      <div class="w-9 h-5 rounded bg-blue-500"></div>
+    </div>
+    <span class="opacity-40 text-xs">→</span>
+    <div class="w-9 h-5 rounded bg-rose-500"></div>
+  </div>
+</div>
+
+<div v-click class="mt-6 flex gap-8 justify-center text-xs opacity-70">
+  <span><span class="inline-block w-3 h-3 rounded bg-rose-500 align-middle"></span> a wrong reply — and everything built on it</span>
+  <span><span class="inline-block w-3 h-3 rounded bg-rose-500 opacity-40 align-middle"></span> the error, re-read on every request</span>
+</div>
+
+<div v-click class="mt-8 text-center text-xl">
+An error "makes it into the context, where it is repeatedly referenced." <sup class="text-xs opacity-60">[10]</sup><br>
+<span class="text-sm opacity-70">GPT-4 can spot <b>87%</b> of its own false claims — when asked separately. <sup>[11]</sup></span>
+</div>
+
+<!--
+Why a lost conversation stays lost: the wrong turn is re-sent and re-read on
+every subsequent request, like all history (slide 2's motif — rose here
+extends the dumb-zone color to mean "wrong content"; faded rose is the error
+riding along in history).
+
+The term: Drew Breunig, "How Long Contexts Fail" (June 22, 2025), verbatim:
+"Context Poisoning is when a hallucination or other error makes it into the
+context, where it is repeatedly referenced." His fuller taxonomy — poisoning,
+distraction, confusion, clash — is worth a read; poisoning is the one that
+fits this deck's arc.
+
+The mechanism: Zhang et al., "How Language Model Hallucinations Can Snowball"
+(arXiv 2305.13534, 2023) — "an LM over-commits to early mistakes, leading to
+more mistakes that it otherwise would not make." The kicker stat, verbatim:
+"ChatGPT and GPT-4 can identify 67% and 87% of their own mistakes" — when the
+claim is checked separately, outside the conversation that produced it. The
+model knows better; staying consistent with its own context wins anyway.
+-->
+
+---
+
+# It's Trained to Agree With You
+
+<div class="mt-12 flex justify-center gap-12">
+  <div v-click class="flex flex-col gap-3 w-72">
+    <div class="rounded-lg bg-blue-500 bg-opacity-10 border border-blue-500 px-4 py-2 text-sm">I really <b>like</b> this argument. Feedback?</div>
+    <div class="rounded-lg bg-amber-500 bg-opacity-10 border border-amber-500 px-4 py-2 text-sm self-end">Compelling — well constructed.</div>
+  </div>
+  <div v-click class="flex flex-col gap-3 w-72">
+    <div class="rounded-lg bg-blue-500 bg-opacity-10 border border-blue-500 px-4 py-2 text-sm">I really <b>dislike</b> this argument. Feedback?</div>
+    <div class="rounded-lg bg-amber-500 bg-opacity-10 border border-amber-500 px-4 py-2 text-sm self-end">Unconvincing — it falls apart.</div>
+  </div>
+</div>
+
+<div v-click class="mt-4 text-center text-sm opacity-60">Same argument.</div>
+
+<div v-click class="mt-10 text-center text-2xl">
+<b>Agreement isn't evidence.</b> It's what the training rewards. <sup class="text-xs opacity-60">[12]</sup><br>
+<span class="text-xs opacity-60">Humans and preference models prefer "convincingly-written sycophantic responses" over correct ones</span>
+</div>
+
+<!--
+Sharma et al. (Anthropic), "Towards Understanding Sycophancy in Language
+Models" — ICLR 2024. Five state-of-the-art assistants "consistently exhibit
+sycophancy across four varied free-form text-generation tasks."
+
+The two panels are an illustrative recreation of the paper's feedback-
+sycophancy task (feedback on an argument shifts positive/negative to match
+the user's stated like/dislike) — not a real transcript.
+
+The training-reward claim, with the paper's own hedge: sycophancy is "likely
+driven in part by human preference judgments favoring sycophantic responses";
+"when a response matches a user's views, it is more likely to be preferred";
+"both humans and preference models prefer convincingly-written sycophantic
+responses over correct ones a non-negligible fraction of the time"; and
+optimizing against preference models "sometimes sacrifices truthfulness in
+favor of sycophancy."
+
+Tie back to the deck's arc: in a long conversation you've usually stated your
+views many times — all of it re-read on every request. Pushing back harder
+doesn't produce truth; it produces agreement. (That last step is our framing,
+not the paper's — it studied single exchanges.)
+-->
+
+---
+
 # References
 
 <div class="text-xs grid grid-cols-2 gap-x-10">
@@ -473,12 +634,28 @@ and re-sent.
    <https://www.aihero.dev/what-is-the-context-window><br>
    "The stuff in the middle the LLM pays a bit less attention to … much more pronounced the larger the context window gets."
 
-</div>
-<div>
-
 8. Liu et al. — *Lost in the Middle: How Language Models Use Long Contexts*, TACL 2024<br>
    <https://arxiv.org/abs/2307.03172><br>
    "Performance … significantly degrades when models must access relevant information in the middle of long contexts."
+
+9. Laban et al. — *LLMs Get Lost in Multi-Turn Conversation*, 2025<br>
+   <https://arxiv.org/abs/2505.06120><br>
+   "An average drop of 39% across six generation tasks … when LLMs take a wrong turn in a conversation, they get lost and do not recover."
+
+</div>
+<div>
+
+10. Drew Breunig — *How Long Contexts Fail*, 2025<br>
+    <https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html><br>
+    "Context Poisoning is when a hallucination or other error makes it into the context, where it is repeatedly referenced."
+
+11. Zhang et al. — *How Language Model Hallucinations Can Snowball*, 2023<br>
+    <https://arxiv.org/abs/2305.13534><br>
+    "An LM over-commits to early mistakes, leading to more mistakes that it otherwise would not make."
+
+12. Sharma et al. — *Towards Understanding Sycophancy in Language Models*, ICLR 2024<br>
+    <https://arxiv.org/abs/2310.13548><br>
+    "Sycophancy is a general behavior of state-of-the-art AI assistants, likely driven in part by human preference judgments favoring sycophantic responses."
 
 </div>
 </div>
