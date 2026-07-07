@@ -59,9 +59,13 @@ presented at work.
 
 ## State / next steps
 
-- Work happens on branch **`deck-v2`**; merges go dev → main when Harrison
-  says so. Pushing `main` publishes to Pages, so only push when the deck
-  should be public.
+- Work happens on branch **`deck-shape`** (branched off `deck-v2` after it was
+  merged into `dev`); merges go dev → main when Harrison says so. Pushing
+  `main` publishes to Pages, so only push when the deck should be public.
+- This phase's scope: an agenda slide, aligning the overall presentation
+  shape, and a section on Matt Pocock's work (sources are listed in
+  README.md's References). Content awaits Harrison's dictation — do not
+  draft ahead.
 - Launch the dev server with the `launch-deck` skill — it kills stale
   instances first (a stale server on 3030 serves old slides; a browser tab
   with a dead hot-reload socket renders stale content until hard-refreshed).
