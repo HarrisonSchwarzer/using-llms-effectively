@@ -27,7 +27,12 @@ presented at work.
 - One idea per slide. A tiny bit of text; visuals do the work. When a slide
   feels dense, split it across slides rather than shrinking content.
 - Established color language: **blue block = user message, amber = model
-  reply, faded = re-sent history**. Reuse it for continuity.
+  reply, faded = re-sent history**. Slide 7 adds: **emerald = smart zone,
+  rose = dumb zone**. Reuse both for continuity.
+- Side-by-side chart panels must share a **fixed-height bar area** (e.g.
+  `style="height: 119px"` on both `flex items-end` rows in slide 8) —
+  otherwise each panel grows only to its own tallest bar and the baselines
+  don't align.
 - Depth (derivations, caveats, pricing details) lives in presenter notes
   (HTML comments at the end of a slide), not on the slide.
 
@@ -43,6 +48,19 @@ presented at work.
   stateful mode bills all previous input tokens) and Anthropic *Context
   windows* doc ("input phase: contains all previous conversation history plus
   the current user message"). Both are on the References slide.
+- **Smart zone threshold on-slide is ~100K** (Pocock's marker from the talk);
+  presenter notes carry his written dictionary's 125K–150K figure and its
+  "though this is debated" caveat. Don't flatten the two into one number.
+- **Memento quote**: on-slide wording is lightly cleaned ("LLMs are kind of
+  like the guy from *Memento* — they just continually forget."); the verbatim
+  transcript wording lives in the presenter note. Cited to the talk video.
+- **Cite aihero.dev, never github.com, in slides.md** (identity-separation
+  rule in `.local/notes.md` bans all GitHub links there). The aihero.dev
+  dictionary URLs 404 to non-browser fetchers but work in real browsers.
+- Corroborating data verified: NoLiMa (ICML 2025, arxiv.org/abs/2502.05167 —
+  "at 32K, 11 models drop below 50%" of baseline; per-model effective lengths
+  2K–8K) and Chroma's *Context Rot* report (18 frontier models). Both on the
+  References slide.
 
 ## Current slide map
 
@@ -55,7 +73,19 @@ presented at work.
    10/30/50/…, writes constant, history 20n)
 5. **The Bill Is a Gauss Sum** — 10 + 30 + 50 + … = 10·n²; linear content,
    quadratic bill
-6. **References** — numbered sources, matching on-slide markers
+6. **The Bill Isn't the Only Thing Growing** — transition: growing context
+   costs money *and* intelligence
+7. **The Smart Zone and the Dumb Zone** `[3][4]` — recreated Pocock visual:
+   200K vs 1M context bars, same-size emerald smart zone (≈100K), rose dumb
+   zone; "The window grows. The smart zone doesn't."
+8. **It's Not Just a Feeling** `[5][6]` — NoLiMa bar charts (GPT-4o,
+   Claude 3.5 Sonnet; base→32K), effective lengths; Chroma corroboration line
+9. **Memento quote** `[3]` — big centered quote, no heading
+10. **References** — numbered sources, matching on-slide markers; two-column
+    grid at text-xs, **max 6 entries per slide** (3 per column — entry 6
+    overflowed the single-column layout). More sources are expected as the
+    deck grows: continue numbering onto additional "References (cont.)"
+    slides rather than shrinking or cramming.
 
 ## State / next steps
 
@@ -64,8 +94,9 @@ presented at work.
   `main` publishes to Pages, so only push when the deck should be public.
 - This phase's scope: an agenda slide, aligning the overall presentation
   shape, and a section on Matt Pocock's work (sources are listed in
-  README.md's References). Content awaits Harrison's dictation — do not
-  draft ahead.
+  README.md's References). The Pocock transition (slides 6–9) is dictated and
+  done; the agenda and overall shape still await Harrison's dictation — do
+  not draft ahead.
 - Launch the dev server with the `launch-deck` skill — it kills stale
   instances first (a stale server on 3030 serves old slides; a browser tab
   with a dead hot-reload socket renders stale content until hard-refreshed).

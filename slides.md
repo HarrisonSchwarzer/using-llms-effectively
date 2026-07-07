@@ -201,9 +201,182 @@ $25/M output), so "total tokens" understates the true cost skew.
 
 ---
 
+# The Bill Isn't the Only Thing Growing
+
+<div class="mt-24 text-2xl text-center leading-relaxed">
+A growing history doesn't just cost <b>money</b> …
+</div>
+
+<div v-click class="mt-6 text-2xl text-center leading-relaxed">
+… it costs <b>intelligence</b>.
+</div>
+
+<!--
+Bridge from cost to quality. So far the problem was the bill; the next slides
+show the same growing context also degrades the model's output.
+
+Matt Pocock — TypeScript educator (Total TypeScript), now teaching AI-assisted
+coding at AI Hero. This section draws on his "Full Walkthrough: Workflow for
+AI Coding" workshop, AI Engineer conference (Europe), April 24, 2026.
+-->
+
+---
+
+# The Smart Zone and the Dumb Zone
+
+<div class="mt-14 flex flex-col gap-8 items-start mx-auto w-max">
+  <div v-click class="flex items-center gap-3">
+    <span class="w-28 text-right text-xs opacity-50 font-mono">200K window</span>
+    <div class="flex h-6">
+      <div class="rounded-l bg-emerald-500" style="width: 75px"></div>
+      <div class="rounded-r bg-rose-500 opacity-30" style="width: 75px"></div>
+    </div>
+  </div>
+  <div v-click class="flex items-center gap-3">
+    <span class="w-28 text-right text-xs opacity-50 font-mono">1M window</span>
+    <div class="flex h-6">
+      <div class="rounded-l bg-emerald-500" style="width: 75px"></div>
+      <div class="rounded-r bg-rose-500 opacity-30" style="width: 675px"></div>
+    </div>
+  </div>
+</div>
+
+<div v-click class="mt-8 flex gap-8 justify-center text-xs opacity-70">
+  <span><span class="inline-block w-3 h-3 rounded bg-emerald-500 align-middle"></span> smart zone — ends ≈ 100K tokens</span>
+  <span><span class="inline-block w-3 h-3 rounded bg-rose-500 opacity-30 align-middle"></span> dumb zone <sup>[3][4]</sup></span>
+</div>
+
+<div v-click class="mt-10 text-2xl text-center">
+The window grows. The <b>smart zone</b> doesn't.
+</div>
+
+<!--
+Pocock's terms. Dictionary definition: "Early in a session the agent is in a
+'smart zone' — sharp, focused, recall is good. As the session grows it drifts
+into a 'dumb zone': sloppier, forgetful, more mistakes." Key line: "Same
+model, same harness — just more context."
+
+The ≈100K figure is his marker from the talk: "around 100k is kind of my new
+marker for this … it doesn't matter whether you're using 1 million context
+window or 200k." His written dictionary says the dumb zone "commonly begins
+around 125K–150K tokens — though this is debated." The zones don't track the
+window limit — "plan around the smart zone, not the window."
+
+He attributes the felt effect to attention degradation. Echo of our cost
+story: attention compute also scales quadratically with context length —
+same shape, but presented here as an echo, not as the claimed mechanism.
+
+This is a recreation of the visual from his talk (no published deck exists).
+-->
+
+---
+
+# It's Not Just a Feeling
+
+<div class="mt-4 text-center text-xs opacity-60">
+NoLiMa benchmark — needle-in-a-haystack with <b>no literal matches</b> <sup>[5]</sup>
+</div>
+
+<div class="mt-6 flex justify-center gap-20">
+  <div v-click>
+    <div class="text-center text-sm mb-1 opacity-80">GPT-4o</div>
+    <div class="text-center text-[10px] mb-3 opacity-50">claims 128K · effective 8K</div>
+    <div class="flex items-end gap-2" style="height: 119px">
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">99</span><div class="w-7 rounded-t bg-amber-500" style="height: 119px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">98</span><div class="w-7 rounded-t bg-amber-500" style="height: 118px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">96</span><div class="w-7 rounded-t bg-amber-500" style="height: 115px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">89</span><div class="w-7 rounded-t bg-amber-500" style="height: 107px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">82</span><div class="w-7 rounded-t bg-amber-500" style="height: 98px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">70</span><div class="w-7 rounded-t bg-amber-500" style="height: 84px"></div></div>
+    </div>
+    <div class="flex gap-2 mt-1">
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">base</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">1K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">4K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">8K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">16K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">32K</span>
+    </div>
+  </div>
+  <div v-click>
+    <div class="text-center text-sm mb-1 opacity-80">Claude 3.5 Sonnet</div>
+    <div class="text-center text-[10px] mb-3 opacity-50">claims 200K · effective 4K</div>
+    <div class="flex items-end gap-2" style="height: 119px">
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">88</span><div class="w-7 rounded-t bg-amber-500" style="height: 105px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">85</span><div class="w-7 rounded-t bg-amber-500" style="height: 102px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">78</span><div class="w-7 rounded-t bg-amber-500" style="height: 93px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">62</span><div class="w-7 rounded-t bg-amber-500" style="height: 74px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">46</span><div class="w-7 rounded-t bg-amber-500" style="height: 55px"></div></div>
+      <div class="flex flex-col items-center gap-1"><span class="text-[9px] opacity-60">30</span><div class="w-7 rounded-t bg-amber-500" style="height: 36px"></div></div>
+    </div>
+    <div class="flex gap-2 mt-1">
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">base</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">1K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">4K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">8K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">16K</span>
+      <span class="w-7 text-center text-[9px] opacity-50 font-mono">32K</span>
+    </div>
+  </div>
+</div>
+
+<div v-click class="mt-6 text-center text-lg">
+Scores collapse long before the window is full.<br>
+<span class="text-xs opacity-60">Same pattern across 18 frontier models — even on trivial tasks <sup>[6]</sup></span>
+</div>
+
+<!--
+NoLiMa (Adobe Research, ICML 2025): 13 LLMs, all claiming ≥128K contexts,
+tested on needle-in-a-haystack where question and needle share no words — the
+model must infer the association, so the drop is attention, not string
+matching. Abstract: "At 32K, for instance, 11 models drop below 50% of their
+strong short-length baselines. Even GPT-4o … experiences a reduction from an
+almost-perfect baseline of 99.3% to 69.7%." (The repo README says 10 models;
+the paper's abstract says 11 — the abstract is canonical here.)
+
+Full table (base / 1K / 2K / 4K / 8K / 16K / 32K → effective length, defined
+as the longest length keeping ≥85% of base):
+- GPT-4o: 99.3 / 98.1 / 98.0 / 95.7 / 89.2 / 81.6 / 69.7 → 8K
+- Gemini 1.5 Pro: 92.6 / 86.4 / 82.7 / 75.4 / 63.9 / 55.5 / 48.2 → 2K
+- Claude 3.5 Sonnet: 87.6 / 85.4 / 84.0 / 77.6 / 61.7 / 45.7 / 29.8 → 4K
+- Llama 3.3 70B: 97.3 / 94.2 / 87.4 / 81.5 / 72.1 / 59.5 / 42.7 → 2K
+
+Chroma's "Context Rot" report (2025) corroborates on newer models: 18 models
+across Claude 4, GPT-4.1, Gemini 2.5, Qwen3 families — "performance grows
+increasingly unreliable as input length grows", "even under these minimal
+conditions, model performance degrades as input length increases."
+
+Pocock's own context-window article visualizes the related "Lost in the
+Middle" effect (Liu et al., TACL 2024).
+-->
+
+---
+
+<div class="h-full flex flex-col items-center justify-center">
+  <div class="max-w-3xl text-3xl leading-relaxed italic opacity-90 text-center">
+    "LLMs are kind of like the guy from <i>Memento</i> — they just continually forget."
+  </div>
+  <div v-click class="mt-10 text-sm opacity-60">— Matt Pocock <sup>[3]</sup></div>
+</div>
+
+<!--
+Verbatim from the talk transcript (~7 min mark): "Another weird constraint of
+LLMs is LLMs are kind of like the guy from Memento, right? They just
+continually forget." Lightly cleaned for the slide.
+
+Memento (2000): Leonard can't form new memories — every scene he starts from
+scratch, relying on polaroids and tattoos as external memory. That's the
+stateless endpoint from slide 3 wearing a trench coat: nothing persists
+between requests; anything the model should "remember" must be written down
+and re-sent.
+-->
+
+---
+
 # References
 
-<div class="text-sm">
+<div class="text-xs grid grid-cols-2 gap-x-10">
+<div>
 
 1. OpenAI — *Conversation state*<br>
    <https://developers.openai.com/api/docs/guides/conversation-state><br>
@@ -213,4 +386,24 @@ $25/M output), so "total tokens" understates the true cost skew.
    <https://platform.claude.com/docs/en/build-with-claude/context-windows><br>
    "Input phase: contains all previous conversation history plus the current user message."
 
+3. Matt Pocock — *Full Walkthrough: Workflow for AI Coding*, AI Engineer, Apr 24 2026<br>
+   <https://www.youtube.com/watch?v=-QFHIoCo-Ko><br>
+   "Around 100K is kind of my new marker … it doesn't matter whether you're using a 1 million context window or 200K."
+
+</div>
+<div>
+
+4. Matt Pocock — *AI Coding Dictionary: Smart zone*<br>
+   <https://www.aihero.dev/ai-coding-dictionary/smart-zone><br>
+   "On frontier models, the dumb zone commonly begins around 125K–150K tokens — though this is debated."
+
+5. Modarressi et al. — *NoLiMa: Long-Context Evaluation Beyond Literal Matching*, ICML 2025<br>
+   <https://arxiv.org/abs/2502.05167><br>
+   "At 32K … 11 models drop below 50% of their strong short-length baselines."
+
+6. Chroma — *Context Rot: How Increasing Input Tokens Impacts LLM Performance*, 2025<br>
+   <https://research.trychroma.com/context-rot><br>
+   "Performance grows increasingly unreliable as input length grows" — 18 frontier models.
+
+</div>
 </div>
