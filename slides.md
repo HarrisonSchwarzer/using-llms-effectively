@@ -588,6 +588,97 @@ not the paper's — it studied single exchanges.)
 
 ---
 
+# Ask a Guru, Not a Chatbot
+
+<div class="mt-12 flex justify-center gap-24 items-start">
+  <div v-click class="flex flex-col items-center justify-between" style="height: 150px">
+    <div class="text-sm opacity-80">chatbot</div>
+    <div class="flex flex-col gap-2 items-start">
+      <div class="flex items-center gap-2">
+        <div class="flex gap-1">
+          <div class="w-5 h-4 rounded bg-blue-500"></div>
+        </div>
+        <span class="opacity-40 text-xs">→</span>
+        <div class="w-5 h-4 rounded bg-amber-500"></div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="flex gap-1">
+          <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-blue-500"></div>
+        </div>
+        <span class="opacity-40 text-xs">→</span>
+        <div class="w-5 h-4 rounded bg-amber-500"></div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="flex gap-1">
+          <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-blue-500"></div>
+        </div>
+        <span class="opacity-40 text-xs">→</span>
+        <div class="w-5 h-4 rounded bg-amber-500"></div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="flex gap-1">
+          <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+          <div class="w-5 h-4 rounded bg-blue-500"></div>
+        </div>
+        <span class="opacity-40 text-xs">→</span>
+        <div class="w-5 h-4 rounded bg-amber-500"></div>
+      </div>
+    </div>
+    <div class="text-xs opacity-50">every request re-reads everything</div>
+  </div>
+  <div v-click class="flex flex-col items-center justify-between" style="height: 150px">
+    <div class="text-sm opacity-80">guru</div>
+    <div class="flex items-center gap-2">
+      <div class="w-5 h-4 rounded bg-blue-500"></div>
+      <span class="opacity-40 text-xs">→</span>
+      <div class="w-5 h-4 rounded bg-amber-500"></div>
+    </div>
+    <div class="text-xs opacity-50">one specified question, one answer</div>
+  </div>
+</div>
+
+<div v-click class="mt-8 text-center text-sm opacity-70">
+keep it short · never compact · no back-and-forth
+</div>
+
+<div v-click class="mt-6 text-center text-2xl">
+The less it's a <b>chatbot</b>, the <b>smarter</b> it is.
+</div>
+
+<!--
+The summary — each rule is one section of the deck in a line:
+
+- Keep it short: reads grow quadratically (slides 4–5), and quality falls off
+  past the smart zone long before the window is full (slides 7–9).
+- Never compact: compaction is a paid, lossy summary of the history — you
+  spend tokens producing it, detail is gone, and any error in the summary is
+  invisible poisoned context (that last link is our framing, extending
+  slide 12). Restart fresh instead, carrying everything you've learned in one
+  fully-specified prompt — the Laban et al. takeaway from slide 11.
+- No back-and-forth: multi-turn delivery loses 39% on average (slide 11), the
+  wrong turns ride along in history forever (slide 12), and pushing back
+  produces agreement, not truth (slide 13).
+
+No new citations — everything here is sourced on the earlier slides [1]–[12].
+
+Harrison's framing, near-verbatim: "the more we use it like a guru that can
+answer a specific question, and less like a chatbot, the better the models
+perform."
+-->
+
+---
+
 # References
 
 <div class="text-xs grid grid-cols-2 gap-x-10">
