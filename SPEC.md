@@ -102,6 +102,10 @@ presented at work.
   deck's block language. Captions use the macOS 'Bradley Hand' font with a
   generic cursive fallback (deck is presented/exported locally — no webfont
   added). Exactly two look-outs, per dictation; no citation markers.
+- **A live demo happens between slides 16 and 17** — slide 16 ("How Should
+  We Use Them?" → "I'll show you!") is the pivot out of the deck; Best
+  Practices (17) is the return. Both are uncited: the checklist is practice
+  advice, not sourced claims. Bullet wording is Harrison's, near-verbatim.
 
 ## Current slide map
 
@@ -146,12 +150,20 @@ presented at work.
     one blue→amber exchange), rules line "keep it short · never compact ·
     no back-and-forth", punchline "The less it's a chatbot, the smarter it
     is." No citation markers — recap only.
-16. **References** — numbered sources, matching on-slide markers; two-column
+16. **How Should We Use Them?** — transition into the live demo: heading +
+    one v-click ("I'll show you!"). Harrison switches to a real session
+    here, then returns for Best Practices.
+17. **Best Practices** — closing checklist, one v-click per top-level bullet
+    (Git-hygiene subpoints reveal with their parent): Plan Mode, context
+    window, Git hygiene (branch the work / keep spec + README current),
+    helper functions to orient the model, don't trust it — always test. No
+    citation markers — practice advice, not sourced claims.
+18. **References** — numbered sources, matching on-slide markers; two-column
     grid at text-xs, **max 6 entries per slide** (3 per column — entry 6
     overflowed the single-column layout). More sources are expected as the
     deck grows: continue numbering onto additional "References (cont.)"
     slides rather than shrinking or cramming.
-17. **References (cont.)** — entries 7–12 (now at the 6-entry cap; the next
+19. **References (cont.)** — entries 7–12 (now at the 6-entry cap; the next
     source starts a third references slide)
 
 ## State / next steps
@@ -178,6 +190,8 @@ presented at work.
   layout chosen from presented options) — then the red-flags recap slide
   "Don't Believe His Lies" (long-running chats / context poisoning; Memento
   polaroid layout chosen from presented options), inserted before it. Final
-  order: recap 14, summary 15, references 16–17.
-- Slides 1–15 are dictated and committed. Nothing beyond them is dictated —
+  order: recap 14, summary 15, references 16–17. Later the same day he
+  dictated the demo pivot ("How Should We Use Them?" / "I'll show you!") and
+  the Best Practices checklist → slides 16–17, references now 18–19.
+- Slides 1–17 are dictated and committed. Nothing beyond them is dictated —
   wait for Harrison's next piece rather than inventing the roadmap.
