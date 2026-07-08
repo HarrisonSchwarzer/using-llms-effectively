@@ -92,10 +92,16 @@ presented at work.
   part by" human preference judgments — slide 13's "It's what the training
   rewards" is the punchy version; the presenter note carries the verbatim
   hedge. Don't strip the hedge from the note.
-- **Summary slide (14) carries no citation markers** — it recaps claims
+- **Summary slide (15) carries no citation markers** — it recaps claims
   already sourced on-slide (`[1]`–`[12]`). Punchline wording "The less it's
   a chatbot, the smarter it is." is approved. The compaction-as-poisoning
   link in its presenter note is our framing, not a cited claim.
+- **Red-flags recap slide (14) is a Memento polaroid pastiche** — a
+  deliberate one-off visual paying off the slide-10 quote ("Don't Believe
+  His Lies" is Leonard's polaroid caption); the photo areas still use the
+  deck's block language. Captions use the macOS 'Bradley Hand' font with a
+  generic cursive fallback (deck is presented/exported locally — no webfont
+  added). Exactly two look-outs, per dictation; no citation markers.
 
 ## Current slide map
 
@@ -130,17 +136,22 @@ presented at work.
 13. **It's Trained to Agree With You** `[12]` — two chat panels, same
     argument, user says like/dislike, replies mirror; "Agreement isn't
     evidence."
-14. **Ask a Guru, Not a Chatbot** — summary slide: chatbot vs guru panels
+14. **Don't Believe His Lies** — red-flags recap: two tilted Memento-polaroid
+    cards (photo area = block motifs on dark panel — growing faded history /
+    poisoned rows), handwritten captions "long-running chats" / "context
+    poisoning", rules beneath ("Minimize the back-and-forth." / "One mess-up
+    and it's cooked. Start again."). No citation markers — recap only.
+15. **Ask a Guru, Not a Chatbot** — summary slide: chatbot vs guru panels
     (request-row motif at half scale — four rows of piling faded history vs
     one blue→amber exchange), rules line "keep it short · never compact ·
     no back-and-forth", punchline "The less it's a chatbot, the smarter it
     is." No citation markers — recap only.
-15. **References** — numbered sources, matching on-slide markers; two-column
+16. **References** — numbered sources, matching on-slide markers; two-column
     grid at text-xs, **max 6 entries per slide** (3 per column — entry 6
     overflowed the single-column layout). More sources are expected as the
     deck grows: continue numbering onto additional "References (cont.)"
     slides rather than shrinking or cramming.
-16. **References (cont.)** — entries 7–12 (now at the 6-entry cap; the next
+17. **References (cont.)** — entries 7–12 (now at the 6-entry cap; the next
     source starts a third references slide)
 
 ## State / next steps
@@ -162,9 +173,11 @@ presented at work.
 - Launch the dev server with the `launch-deck` skill — it kills stale
   instances first (a stale server on 3030 serves old slides; a browser tab
   with a dead hot-reload socket renders stale content until hard-refreshed).
-- July 8 session: Harrison dictated the summary slide — slide 14, "Ask a
-  Guru, Not a Chatbot" (keep it short / never compact / no back-and-forth;
-  guru-vs-chatbot layout chosen from presented options). References slides
-  renumbered to 15–16.
-- Slides 1–14 are dictated and committed. Nothing beyond them is dictated —
+- July 8 session: Harrison dictated the summary slide — "Ask a Guru, Not a
+  Chatbot" (keep it short / never compact / no back-and-forth; guru-vs-chatbot
+  layout chosen from presented options) — then the red-flags recap slide
+  "Don't Believe His Lies" (long-running chats / context poisoning; Memento
+  polaroid layout chosen from presented options), inserted before it. Final
+  order: recap 14, summary 15, references 16–17.
+- Slides 1–15 are dictated and committed. Nothing beyond them is dictated —
   wait for Harrison's next piece rather than inventing the roadmap.
