@@ -588,6 +588,105 @@ not the paper's — it studied single exchanges.)
 
 ---
 
+# Don't Believe His Lies
+
+<div class="mt-10 flex justify-center gap-24 items-start">
+  <div v-click class="flex flex-col items-center gap-4">
+    <div class="bg-white rounded-sm shadow-lg px-3 pt-3 pb-2" style="transform: rotate(-2.5deg)">
+      <div class="bg-gray-900 rounded-sm px-5 py-4 flex flex-col gap-2 items-start">
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-5 h-4 rounded bg-blue-500"></div>
+          </div>
+          <span class="opacity-40 text-xs text-white">→</span>
+          <div class="w-5 h-4 rounded bg-amber-500"></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-blue-500"></div>
+          </div>
+          <span class="opacity-40 text-xs text-white">→</span>
+          <div class="w-5 h-4 rounded bg-amber-500"></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-blue-500"></div>
+          </div>
+          <span class="opacity-40 text-xs text-white">→</span>
+          <div class="w-5 h-4 rounded bg-amber-500"></div>
+        </div>
+      </div>
+      <div class="text-center text-gray-800 text-lg pt-2 pb-1" style="font-family: 'Bradley Hand', cursive">long-running chats</div>
+    </div>
+    <div class="text-sm opacity-70">Minimize the back-and-forth.</div>
+  </div>
+  <div v-click class="flex flex-col items-center gap-4">
+    <div class="bg-white rounded-sm shadow-lg px-3 pt-3 pb-2" style="transform: rotate(2deg)">
+      <div class="bg-gray-900 rounded-sm px-5 py-4 flex flex-col gap-2 items-start">
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-5 h-4 rounded bg-blue-500"></div>
+          </div>
+          <span class="opacity-40 text-xs text-white">→</span>
+          <div class="w-5 h-4 rounded bg-amber-500"></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-blue-500"></div>
+          </div>
+          <span class="opacity-40 text-xs text-white">→</span>
+          <div class="w-5 h-4 rounded bg-rose-500"></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1">
+            <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-amber-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-blue-500 opacity-25"></div>
+            <div class="w-5 h-4 rounded bg-rose-500 opacity-40"></div>
+            <div class="w-5 h-4 rounded bg-blue-500"></div>
+          </div>
+          <span class="opacity-40 text-xs text-white">→</span>
+          <div class="w-5 h-4 rounded bg-rose-500"></div>
+        </div>
+      </div>
+      <div class="text-center text-gray-800 text-lg pt-2 pb-1" style="font-family: 'Bradley Hand', cursive">context poisoning</div>
+    </div>
+    <div class="text-sm opacity-70">One mess-up and it's cooked. Start again.</div>
+  </div>
+</div>
+
+<!--
+Recap of the red-flags section, as warnings to your future self.
+
+The title is the other half of the slide-10 Memento callback: "Don't believe
+his lies" is what Leonard writes on his polaroid of Teddy. The polaroids are
+his external-memory system — notes that outlive the forgetting. Here, "his"
+is the model's. (Deliberate one-off visual; the photo areas still speak the
+deck's block language.)
+
+The two look-outs, mapped back to the deck:
+- Long-running chats — the bill grows quadratically (slides 4–5), quality
+  falls off past the smart zone (7–9), and multi-turn delivery alone costs
+  39% (slide 11). Minimize the back-and-forth.
+- Context poisoning — one wrong reply is re-sent and re-read on every later
+  request, and everything downstream builds on it (slide 12); the chat does
+  not recover (slide 11). It's cooked: don't argue with it, start a fresh
+  conversation carrying what you learned.
+
+No new citations — everything here is sourced on slides 11–13 ([9]–[12]).
+Dictated wording kept near-verbatim ("it's cooked").
+-->
+
+---
+
 # Ask a Guru, Not a Chatbot
 
 <div class="mt-12 flex justify-center gap-24 items-start">
