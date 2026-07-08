@@ -778,6 +778,57 @@ perform."
 
 ---
 
+# How Should We Use Them?
+
+<div v-click class="mt-24 text-3xl text-center">
+I'll show you!
+</div>
+
+<!--
+Pivot into the live demo: switch to a real session here and walk the method
+end to end, then come back for Best Practices.
+-->
+
+---
+
+# Best Practices
+
+<div class="mt-10 text-xl leading-relaxed">
+
+<v-clicks>
+
+- Start in **Plan Mode**
+- Keep an eye on your **context window**
+- Good **Git hygiene**
+  - Branch your work — keep the damage isolated.
+  - Keep your spec and README up to date!
+- Create **helper functions** to orient the model. This keeps the back-and-forth to a minimum.
+- Don't trust anything it makes. **Always test it!**
+
+</v-clicks>
+
+</div>
+
+<!--
+The closing checklist — practice advice, so no citations. How each item ties
+back to the deck:
+
+- Plan Mode: agree on the approach before any code is written — the plan
+  becomes one fully-specified prompt instead of corrective turns (slide 11's
+  takeaway).
+- Context window: you now know what's growing in there and what it does to
+  cost (4–5) and quality (7–9). Watch it; restart before the dumb zone.
+- Git hygiene: a branch keeps the damage isolated when you shouldn't trust
+  the output anyway; an up-to-date spec and README mean a *fresh* session
+  gets oriented without re-explaining — restarting stays cheap.
+- Helper functions (skills/commands that load context): orient the model up
+  front, minimizing back-and-forth (14–15).
+- Don't trust it: agreement isn't evidence (13), it over-commits to its own
+  mistakes (12) — verification has to live outside the conversation. Test it.
+-->
+
+---
+
 # References
 
 <div class="text-xs grid grid-cols-2 gap-x-10">
