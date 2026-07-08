@@ -155,9 +155,10 @@ presented at work.
     here, then returns for Best Practices.
 17. **Best Practices** — closing checklist, one v-click per top-level bullet
     (Git-hygiene subpoints reveal with their parent): Plan Mode, context
-    window, Git hygiene (branch the work / keep spec + README current),
-    helper functions to orient the model, don't trust it — always test. No
-    citation markers — practice advice, not sourced claims.
+    window (with Harrison's "cutoff is ~100k tokens!" callout — matches the
+    slide-7 on-slide marker), Git hygiene (branch the work / keep spec +
+    README current), helper functions to orient the model, don't trust it —
+    always test. No citation markers — practice advice, not sourced claims.
 18. **References** — numbered sources, matching on-slide markers; two-column
     grid at text-xs, **max 6 entries per slide** (3 per column — entry 6
     overflowed the single-column layout). More sources are expected as the

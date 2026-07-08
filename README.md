@@ -1,8 +1,11 @@
-# Using LLMs Effectively
+# How to Use LLMs Efficiently
 
-A slide deck on how to get good results from large language models — prompting
-fundamentals, working style, failure modes, and verification. Built with
-[Slidev](https://sli.dev), so the slides are plain markdown (`slides.md`).
+A slide deck on using large language models efficiently — why long
+conversations cost quadratically and degrade quality, the red flags to watch
+for, and a working method with best practices that keep token spend down.
+Built with [Slidev](https://sli.dev), so the slides are plain markdown
+(`slides.md`). The previous deck ("Using LLMs Effectively", v1) is archived
+at `archive/slides-v1.md`.
 
 **▶ View the slides:** <https://harrisonschwarzer.github.io/using-llms-effectively/>
 
