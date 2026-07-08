@@ -798,7 +798,7 @@ end to end, then come back for Best Practices.
 <v-clicks>
 
 - Start in **Plan Mode**
-- Keep an eye on your **context window**
+- Keep an eye on your **context window**. The cutoff is ~100k tokens!
 - Good **Git hygiene**
   - Branch your work — keep the damage isolated.
   - Keep your spec and README up to date!
