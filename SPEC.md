@@ -92,6 +92,10 @@ presented at work.
   part by" human preference judgments — slide 13's "It's what the training
   rewards" is the punchy version; the presenter note carries the verbatim
   hedge. Don't strip the hedge from the note.
+- **Summary slide (14) carries no citation markers** — it recaps claims
+  already sourced on-slide (`[1]`–`[12]`). Punchline wording "The less it's
+  a chatbot, the smarter it is." is approved. The compaction-as-poisoning
+  link in its presenter note is our framing, not a cited claim.
 
 ## Current slide map
 
@@ -126,12 +130,17 @@ presented at work.
 13. **It's Trained to Agree With You** `[12]` — two chat panels, same
     argument, user says like/dislike, replies mirror; "Agreement isn't
     evidence."
-14. **References** — numbered sources, matching on-slide markers; two-column
+14. **Ask a Guru, Not a Chatbot** — summary slide: chatbot vs guru panels
+    (request-row motif at half scale — four rows of piling faded history vs
+    one blue→amber exchange), rules line "keep it short · never compact ·
+    no back-and-forth", punchline "The less it's a chatbot, the smarter it
+    is." No citation markers — recap only.
+15. **References** — numbered sources, matching on-slide markers; two-column
     grid at text-xs, **max 6 entries per slide** (3 per column — entry 6
     overflowed the single-column layout). More sources are expected as the
     deck grows: continue numbering onto additional "References (cont.)"
     slides rather than shrinking or cramming.
-15. **References (cont.)** — entries 7–12 (now at the 6-entry cap; the next
+16. **References (cont.)** — entries 7–12 (now at the 6-entry cap; the next
     source starts a third references slide)
 
 ## State / next steps
@@ -153,5 +162,9 @@ presented at work.
 - Launch the dev server with the `launch-deck` skill — it kills stale
   instances first (a stale server on 3030 serves old slides; a browser tab
   with a dead hot-reload socket renders stale content until hard-refreshed).
-- Slides 1–12 are dictated and committed. Nothing beyond them is dictated —
+- July 8 session: Harrison dictated the summary slide — slide 14, "Ask a
+  Guru, Not a Chatbot" (keep it short / never compact / no back-and-forth;
+  guru-vs-chatbot layout chosen from presented options). References slides
+  renumbered to 15–16.
+- Slides 1–14 are dictated and committed. Nothing beyond them is dictated —
   wait for Harrison's next piece rather than inventing the roadmap.
